@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="main">
+        <!--Header -->
+        <header class="header">
+            <div class="search">
+                <input type="text" id="search__input" placeholder="Find Product">
+                <button id="search__button">Find</button>
+            </div>
+        </header>
+
+        <!-- Filters for search -->
+        <div class="filters">
+            <fieldset>
+                <legend>Color</legend>
+                <select id="filter-color" class="filter__select">
+                    <option value="">All</option>
+                    <option value="black">Black</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="purple">Purple</option>
+                    <option value="white">White</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Category</legend>
+                <select id="filter-category" class="filter__select">
+                    <option value="">All</option>
+                    <option value="tech">Tech</option>
+                    <option value="cloth">Cloth</option>
+                    <option value="shoes">Shoes</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Year</legend>
+                <select id="filter-year" class="filter__select">
+                    <option value="">All</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Country</legend>
+                <select id="filter-country" class="filter__select">
+                     <option value="">All</option>
+                    <option value="usa">USA</option>
+                    <option value="s.korea">S.Korea</option>
+                    <option value="jamaica">Jamaica</option>
+                </select>
+            </fieldset>
+        </div>
+
+        <!-- Content starts -->
+        <section class="content">
+            <div class="container">
+                <h2 class="title">Search results</h2>
+                <div class="results" id="results"></div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
