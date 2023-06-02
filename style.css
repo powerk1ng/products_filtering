@@ -34,7 +34,7 @@ main{
     margin-top: 16px;
     justify-content: center;
     column-gap: 10px;
-    
+    row-gap: 20px;
 }
 
 .filter__select{
@@ -50,7 +50,6 @@ main{
     padding: 0px 8px 6px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    
 }
 
 .filters legend{
@@ -59,11 +58,37 @@ main{
     color: #777;
 }
 
+.reset {
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+
+.reset__btn {
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+    border-radius: 10px;
+}
+
+
+.reset__btn:hover {
+    background: black;
+    opacity: 0.2;
+    color: white;
+}
+
 .search{
     display: flex;
     align-items: center;
     margin-top: 10px;
     border: none;
+    max-width: 400px;
+    width: 100%;
 }
 
 .search input, .search button{
@@ -76,7 +101,7 @@ main{
 }
 
 .search input {
-    min-width: 400px;
+    width: 100%;
 }
 
 .search button{
@@ -85,15 +110,15 @@ main{
     cursor: pointer;
 }
 
-.content{
-    padding-top: 32px;
-}
-
 .results{
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
     grid-gap: 16px;
     justify-content: center;
+}
+
+.hide {
+    display: none;
 }
 
 .title{

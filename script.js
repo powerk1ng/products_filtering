@@ -1,5 +1,7 @@
 const dom = {
     results: document.querySelector('.results'),
+    nothingFound: document.querySelector('#nothing'),
+
     search: {
         input: document.querySelector('#search__input'),
         button: document.querySelector('#search__button'),
@@ -9,7 +11,8 @@ const dom = {
         color: document.querySelector('#filter-color'),
         year: document.querySelector('#filter-year'),
         country: document.querySelector('#filter-country'),
-    }
+    },
+    reset: document.querySelector('#reset')
 };
 
 function generateCards(parent) {
@@ -65,14 +68,33 @@ generateCards(cardsData);
         let searchVal = dom.search.input.value.trim();
         let rgx = new RegExp(searchVal, 'i');
         let filteredData = cardsData.filter(item => rgx.test(item.title) || rgx.test(item.description));
-
-        if (!filteredData) {
-            console.log('gsrgfsgfs');
-        } else {
-            generateCards(filteredData);
-        }
+        showSearchResults(filteredData)
     };
 }
+
+const showSearchResults = (filteredDataResults) => {
+    if (filteredDataResults.length <= 0) {
+        dom.nothingFound.classList.remove('hide');
+        generateCards(filteredDataResults);
+
+    } else {
+        dom.nothingFound.classList.add('hide');
+        generateCards(filteredDataResults);
+    }
+}
+
+
+dom.reset.addEventListener('click', () => {
+    // Reset all filter selects
+    document.querySelectorAll('select').forEach(item => item.value = '');
+
+    // Reset the search input
+    dom.search.input.value = '';
+
+    // Generate cards with the original data
+    generateCards(cardsData);
+    showSearchResults(cardsData);
+});
 
 
 //change on filter selection
@@ -91,13 +113,15 @@ const handleChangeFilter = (type) => {
         const filteredCards = filterCards(type, value, cardsData);
         const fullFilteredCards = checkOtherFilters(filtersType, filteredCards, type);
         generateCards(fullFilteredCards);
+        showSearchResults(fullFilteredCards)
     };
 };
+
 filtersType.forEach(type => handleChangeFilter(type));
 
 
 //filter cards on filter click;
-const filterCards = (filtersType, value, cards) =>{
+const filterCards = (filtersType, value, cards) => {
     dom.search.input.value = '';
     let rgx = new RegExp(value);
     const filteredCards = cards.filter(card => rgx.test(card.attributes[filtersType]));
@@ -107,7 +131,7 @@ const filterCards = (filtersType, value, cards) =>{
 
 
 //check filtration changes;
-const checkOtherFilters = (filtersType, filteredCards, extraFiterType) =>{
+const checkOtherFilters = (filtersType, filteredCards, extraFiterType) => {
     let updateFilteredCards = filteredCards;
     const filteredFiltersType = filtersType.filter(type => type !== extraFiterType);
 
@@ -118,7 +142,7 @@ const checkOtherFilters = (filtersType, filteredCards, extraFiterType) =>{
         updateFilteredCards = newFilteredCards;
     });
     return updateFilteredCards;
-}; 
+};
 
 
 // {
@@ -172,16 +196,3 @@ const checkOtherFilters = (filtersType, filteredCards, extraFiterType) =>{
 //     });
 // });
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
