@@ -114,6 +114,7 @@ const handleChangeFilter = (type) => {
         const fullFilteredCards = checkOtherFilters(filtersType, filteredCards, type);
         generateCards(fullFilteredCards);
         showSearchResults(fullFilteredCards)
+        console.log(console.log(value));
     };
 };
 

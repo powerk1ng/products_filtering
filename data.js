@@ -1,19 +1,17 @@
-
-const category = ['tech', 'cloth', 'shoes'];
+const category = ['Tech', 'Cloth', 'Shoes'];
 const dollarSign = '$';
- const cardsData = [
-    {
+const cardsData = [{
         id: 1,
         title: 'TV',
         description: 'Television',
         attributes: {
             year: 2022,
-            color: 'black',
-            country: 's.korea',
+            color: 'Black',
+            country: 'South Korea',
             category: category[0]
         },
         count: 5,
-        cost: 1000+dollarSign,
+        cost: 1000 + dollarSign,
         img: 'img/TV.jfif'
     },
 
@@ -23,28 +21,28 @@ const dollarSign = '$';
         description: 'Man Hoody ',
         attributes: {
             year: 2021,
-            color: 'black',
-            country: 'usa',
+            color: 'Black',
+            country: 'USA',
             category: category[1]
         },
         count: 25,
-        cost: 100+dollarSign,
+        cost: 100 + dollarSign,
         img: 'img/Hoody.jfif'
     },
 
     {
-        title: 'Snickers',
+        title: 'Sneakers',
         id: 3,
         description: 'Nike Man',
         attributes: {
             year: 2020,
-            color: 'blue',
-            country: 'usa',
+            color: 'Blue',
+            country: 'USA',
             category: category[2]
         },
         count: 1,
-        cost: 150+dollarSign,
-        img: 'img/Shoe.png'
+        cost: 150 + dollarSign,
+        img: 'img/blue-shoe.jpg'
     },
 
     {
@@ -52,13 +50,13 @@ const dollarSign = '$';
         id: 4,
         description: 'New 2022 Trand PC, Nvidia 1850GT',
         attributes: {
-            year: 2023,
-            color: 'green',
-            country: 'usa',
+            year: 2022,
+            color: 'Blue',
+            country: 'USA',
             category: category[0]
         },
         count: 0,
-        cost: 2000+dollarSign,
+        cost: 2000 + dollarSign,
         img: 'img/pc.jfif'
     },
 
@@ -67,28 +65,28 @@ const dollarSign = '$';
         id: 5,
         description: 'Man-Velvet',
         attributes: {
-            year: 2018,
-            color: 'purple',
-            country: 'usa',
+            year: 2020,
+            color: 'Purple',
+            country: 'USA',
             category: category[1]
         },
         count: 21,
-        cost: 149+dollarSign,
-        img: 'img/T-shirt.jfif'
+        cost: 149 + dollarSign,
+        img: 'img/purple-shirt.jpg'
     },
 
     {
-        title: 'Snickers',
+        title: 'Sneakers',
         id: 6,
         description: 'Puma sport',
         attributes: {
-            year: 2016,
-            color: 'white',
-            country: 'jamaica',
-            category: category[2]    
+            year: 2021,
+            color: 'White',
+            country: 'Jamaica',
+            category: category[2]
         },
         count: 23,
-        cost: 170+dollarSign,
+        cost: 170 + dollarSign,
         img: 'img/Shoe.png'
     },
 
@@ -97,10 +95,10 @@ const dollarSign = '$';
         id: 7,
         description: 'Samsung S23 Ultra',
         attributes: {
-            year: 2023,
-            color: 'gray',
+            year: 2021,
+            color: 'Gray',
             country: 'South Korea',
-            category: category[1]    
+            category: category[0]
         },
         count: 5,
         cost: 1250 + dollarSign,
